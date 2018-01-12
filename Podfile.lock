@@ -1,0 +1,18 @@
+PODS:
+  - Alamofire (4.6.0)
+  - EMTLoadingIndicator (4.0.0)
+  - SwiftyJSON (4.0.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - EMTLoadingIndicator
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  EMTLoadingIndicator: 84b875fbe500606bb9a5e411885bc152ae9a371f
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+
+PODFILE CHECKSUM: 3ff79f7d529bbe52a88883a1d19397e1b6229ddc
+
+COCOAPODS: 1.3.1

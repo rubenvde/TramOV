@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13771" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch42" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13756"/>
+    </dependencies>
+    <scenes>
+        <!--OV App-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller title="OV App" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="TramOV_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <imageView height="63" alignment="left" image="ov" contentMode="scaleAspectFit" id="IyJ-6j-VWn"/>
+                        <label width="136" alignment="left" text="Waar wil je heen?" textAlignment="center" id="7lP-cu-pYh"/>
+                        <picker height="36" alignment="left" focusStyle="stack" id="BfX-kg-Uei">
+                            <connections>
+                                <action selector="pickerSelectedItemChangedWithValue:" destination="AgC-eL-Hgc" id="23t-dZ-aeT"/>
+                            </connections>
+                        </picker>
+                        <button width="1" alignment="left" title="Zoek" id="Asa-c1-cc7">
+                            <color key="backgroundColor" red="0.90066784620285034" green="0.16047456860542297" blue="0.49397927522659302" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="search" destination="AgC-eL-Hgc" id="idY-Ho-Kuc"/>
+                                <segue destination="vC9-Lm-Gtx" kind="push" identifier="search" id="wyg-Sq-hI9"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="picker" destination="BfX-kg-Uei" id="A9l-uG-eLg"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="128.15384615384616" y="107.66666666666667"/>
+        </scene>
+        <!--Search Tram Controller-->
+        <scene sceneID="ZSF-nq-gvE">
+            <objects>
+                <controller id="vC9-Lm-Gtx" customClass="SearchTramController" customModule="TramOV_WatchKit_Extension">
+                    <items>
+                        <map height="119" alignment="left" id="ZBD-M5-L2R"/>
+                        <label width="136" alignment="left" text="Volgende tram:" id="vyO-lZ-Hr1"/>
+                        <group width="1" alignment="left" id="oEf-h0-jLi">
+                            <items>
+                                <imageView width="42" alignment="left" image="tram" id="OLL-1n-PwT"/>
+                                <label width="108" height="40" alignment="left" text="5 minuten" textAlignment="right" id="KYl-V4-0aJ">
+                                    <fontDescription key="font" type="system" weight="semibold" pointSize="20"/>
+                                </label>
+                                <group width="108" alignment="left" id="nhA-k4-vwV">
+                                    <items>
+                                        <imageView width="27" height="27" alignment="center" id="4Od-45-Usq"/>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="loadingicon" destination="4Od-45-Usq" id="SAx-RD-kpR"/>
+                        <outlet property="loadingicongroup" destination="nhA-k4-vwV" id="bmS-M9-LKK"/>
+                        <outlet property="map" destination="ZBD-M5-L2R" id="OGj-Mq-8I1"/>
+                        <outlet property="minuteslabel" destination="KYl-V4-0aJ" id="p1a-Lu-R6L"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="356.5641025641026" y="107.23076923076924"/>
+        </scene>
+    </scenes>
+</document>
